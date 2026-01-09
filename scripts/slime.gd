@@ -17,7 +17,9 @@ func _process(delta: float) -> void:
 	
 	if ray_cast_left.is_colliding() or not ray_cast_left_gap.is_colliding():
 		direction = 1
+		$AnimatedSprite2D.flip_h = false
 	if ray_cast_right.is_colliding() or not ray_cast_right_gap.is_colliding():
 		direction = -1
+		$AnimatedSprite2D.flip_h = true
 	
 	position.x += direction * SPEED * delta
